@@ -1,6 +1,8 @@
 import React from 'react';
-import {Box, Card, CardContent, CardMedia, Grid, ListItemButton, Typography} from "@mui/material";
+import {Box, Button, Card, CardContent, CardMedia, Grid, ListItemButton, Typography} from "@mui/material";
 import {ItemDialog} from "../ItemDialog/ItemDialog";
+import {addItemToCart} from "../redux/itemsList/itemsListActions";
+import {useDispatch} from "react-redux";
 
 export interface ItemType {
     name: string,
@@ -11,12 +13,17 @@ export interface ItemType {
     market: string
 }
 
-export const Item = (item:ItemType) => {
+export const Item = (item: ItemType) => {
 
     const [isOpen, setIsOpen] = React.useState(false);
-
+    const dispatch = useDispatch();
     const handleClose = () => {
         setIsOpen(false);
+    }
+
+    const handleOnClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        dispatch(addItemToCart(item.name));
+        e.stopPropagation();
     }
 
     return (<>
@@ -34,6 +41,11 @@ export const Item = (item:ItemType) => {
                                         Price: {item.price} ₪
                                     </Typography>
                                 </CardContent>
+
+                                <Button style={{marginLeft: 10}} variant={'contained'}
+                                        onClick={(e) => handleOnClick(e)}>
+                                    Add Item
+                                </Button>
                             </Box>
                         </Grid>
                         <Grid item xs>
