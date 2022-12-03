@@ -3,13 +3,11 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Button from '@mui/material/Button';
-import {Dialog} from "@mui/material";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import {Typography} from "@mui/material";
 
 export default function MainAppBar() {
-
     return (
         <Box sx={{flexGrow: 1}}>
             <AppBar position="static">
@@ -18,6 +16,11 @@ export default function MainAppBar() {
                         <Button size={'large'} variant="contained">
                             <LocalGroceryStoreIcon fontSize={'large'}/>
                         </Button>
+                    </Grid>
+                    <Grid container gap={2} justifyContent={'center'}>
+                        <Typography variant={'h3'} fontWeight={'bold'}>
+                            Shopping List
+                        </Typography>
                     </Grid>
                 </Toolbar>
             </AppBar>

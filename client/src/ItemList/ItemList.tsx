@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Grid, List, ListItem, ListItemButton} from "@mui/material";
+import {Box, Grid, List, ListItem} from "@mui/material";
 import {Item} from "../Item/Item";
 import mockList from '../mock.json';
 
@@ -11,9 +11,7 @@ export const ItemList = () => {
                     {mockList.map((item, key) =>
                         <Grid item>
                             <ListItem key={key} disablePadding>
-                                <ListItemButton>
-                                    <Item item={item}/>
-                                </ListItemButton>
+                                    <Item {...item}/>
                             </ListItem>
                         </Grid>
                     )}
