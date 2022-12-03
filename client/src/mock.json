@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Bamba",
+    "description": "Tasty Bamba",
+    "price": 10.00,
+    "image": "bamba.png"
+  },
+  {
+    "name": "Bisli BBQ",
+    "description": "Tasty Bisli BBQ",
+    "price": 8.00,
+    "image": "bisliBBQ.png"
+  },
+  {
+    "name": "Bisli My Bro",
+    "description": "Tasty Bisli My Bro",
+    "price": 8.00,
+    "image": "bisliMyBro.png"
+  },
+  {
+    "name": "Chips Crunch",
+    "description": "Tasty Chips Crunch",
+    "price": 9.00,
+    "image": "chipsCrunch.webp"
+  },
+  {
+    "name": "Chips Crunch Grill",
+    "description": "Tasty Chips Crunch Grill",
+    "price": 9.00,
+    "image": "chipsCrunchGrill.png"
+  },
+  {
+    "name": "Klik",
+    "description": "Tasty Klik",
+    "price": 8.00,
+    "image": "klik.png"
+  }
+]
