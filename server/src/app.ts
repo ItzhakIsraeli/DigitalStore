@@ -7,8 +7,8 @@ const port = 3001;
 
 
 const init = async () => {
-    await connect();
     app.listen(port, () => console.log(`server running in port ${port}`));
+    await connect();
 }
 
 app.get('/products', async (req, res) => {
