@@ -1,9 +1,12 @@
-import express from 'express';
-import {getAllProducts} from "./db/products.dal";
-import {connect} from "./db/db-connection";
+import express, {Request, Response} from 'express';
+import {checkout, getAllProducts} from './db/store.dal';
+import {connect} from './db/db-connection';
+import bodyParser from 'body-parser';
 
-const app = express();
 const port = 3001;
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 
 const init = async () => {
@@ -11,9 +14,14 @@ const init = async () => {
     await connect();
 }
 
-app.get('/products', async (req, res) => {
+app.get('/products', async (req: Request, res:Response) => {
     const products = await getAllProducts();
-    res.send(`products: ${products}`);
+    res.send(products);
+});
+
+app.post('/checkout', async (req: Request, res:Response) => {
+    const order = await checkout(req.body);
+    res.send(order);
 });
 
 init();
