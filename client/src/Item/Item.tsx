@@ -5,6 +5,7 @@ import {addItemToCart} from "../redux/itemsList/itemsListActions";
 import {useDispatch} from "react-redux";
 
 export interface ItemType {
+    _id:string,
     name: string,
     description: string,
     price: number,
@@ -22,7 +23,7 @@ export const Item = (item: ItemType) => {
     }
 
     const handleOnClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        dispatch(addItemToCart(item.name));
+        dispatch(addItemToCart(item));
         e.stopPropagation();
     }
 

@@ -1,4 +1,5 @@
 import {ItemsListTypes} from "./itemsListTypes";
+import {ItemType} from "../../Item/Item";
 
 export interface ItemsState {
     ItemsList: []
@@ -7,7 +8,7 @@ export interface ItemsState {
 interface actionI {
     type: string,
     payload: {
-        data: string
+        data: ItemType
     }
 }
 
@@ -22,6 +23,11 @@ const itemsListReducer = (state: ItemsState = initialState, action: actionI) => 
                 ...state,
                 ItemsList: [...state.ItemsList, action.payload]
             };
+        case ItemsListTypes.REMOVE_ALL_ITEMS:
+            return {
+                ...state,
+                ItemsList: []
+            }
         default:
             return state
     }
