@@ -1,17 +1,20 @@
 import React from 'react';
 import {Box, Grid, List, ListItem} from "@mui/material";
-import {Item} from "../Item/Item";
-import mockList from '../mock.json';
+import {Item, ItemType} from "../Item/Item";
 
-export const ItemList = () => {
+interface ItemListProps {
+    data: [ItemType] | never[]
+}
+
+export const ItemList = ({data}: ItemListProps) => {
     return (
         <Box>
             <List>
                 <Grid container justifyContent={'center'}>
-                    {mockList.map((item, key) =>
-                        <Grid item>
-                            <ListItem key={key} disablePadding>
-                                    <Item {...item}/>
+                    {data.map((item) =>
+                        <Grid key={item._id}>
+                            <ListItem disablePadding>
+                                <Item {...item} />
                             </ListItem>
                         </Grid>
                     )}

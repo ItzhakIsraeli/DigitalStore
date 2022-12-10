@@ -1,5 +1,14 @@
 import React from 'react';
-import {Avatar, Card, CardContent, CardHeader, CardMedia, Dialog, Grid, Typography} from "@mui/material";
+import {
+    Avatar,
+    Card,
+    CardContent,
+    CardHeader,
+    CardMedia,
+    Dialog,
+    Grid,
+    Typography
+} from "@mui/material";
 import {ItemType} from "../Item/Item";
 
 interface ItemDialogProps {
@@ -16,7 +25,6 @@ export const ItemDialog = ({item, isOpen, handleClose}: ItemDialogProps) => {
             open={isOpen}
             keepMounted
             onClose={handleClose}
-            aria-describedby="alert-dialog-slide-description"
         >
             <Card sx={{width: 500}}>
                 <CardHeader
